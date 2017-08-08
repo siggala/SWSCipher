@@ -82,8 +82,6 @@ class SWSCipher {
         	array_splice( $resultArray, $pos, 1 );
         }
         
-        array_splice( $resultArray, ( $dataLength - $salt ) );
-        
         for( $i = 0, $result = ''; $i < count( $resultArray ); $i++ ) { 
         	$result .= chr( ord( $resultArray[$i] ) ^ ord( $key[$i % $keyLength] ) );
         }

@@ -39,7 +39,7 @@ class SWSCipher {
         
         for( $i = 0, $max = 0, $saltArray = []; $i < $salt; $i++ ) { 
         	$char = chr( ord( $key[( $i + $salt ) % $keyLength] ) ^ ord( $key[$i % $keyLength] ) );
-        	$pos  = round( ord( $char ) ^ ord( $salt ) );
+        	$pos  = ord( $char ) ^ ord( $salt );
         	
         	while( isset( $saltArray[$pos] ) ) {
         		$pos++;
@@ -68,7 +68,7 @@ class SWSCipher {
         
         for( $i = 0, $max = 0, $saltArray = []; $i < $salt; $i++ ) { 
         	$char = chr( ord( $key[( $i + $salt ) % $keyLength] ) ^ ord( $key[$i % $keyLength] ) );
-        	$pos  = round( ord( $char ) ^ ord( $salt ) );
+        	$pos  = ord( $char ) ^ ord( $salt );
         	
         	while( isset( $saltArray[$pos] ) ) {
         		$pos++;

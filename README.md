@@ -38,7 +38,7 @@ SWSCipher::encrypt( 'This is secret message.', 'secretkey', 0, false );
 ### Donation
 If this project helped you in any way, you can give me a small donation :)
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TTUK8ABD385HN&lc=FI&item_name=Siggala%20Web%20Solutions&item_number=sws%2dcipher&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EP597V6WZ3838)
 
 ### License
 MIT

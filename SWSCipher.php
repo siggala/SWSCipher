@@ -14,7 +14,7 @@
  * @link https://www.siggala.com/free-solutions/sws-cipher
  * @version 1.0.0
  * @copyright 2017 Siggala Web Solutions
- * @license MIT License
+ * @license MIT
  * 
  * @param string $data      Data string for encryption/decryption
  * @param string $key       Secret key for encryption/decryption
@@ -26,6 +26,7 @@
 class SWSCipher {
     
     public static function encrypt( $data, $key, $salt = 0, $base64 = true ) {
+    	$data       = urlencode( $data );
     	$dataLength = mb_strlen( $data );
     	$keyLength  = mb_strlen( $key );
     	
@@ -86,6 +87,6 @@ class SWSCipher {
         	$result .= chr( ord( $resultArray[$i] ) ^ ord( $key[$i % $keyLength] ) );
         }
         
-        return $result; 
+        return urldecode( $result );
 	}
 }

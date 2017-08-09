@@ -88,5 +88,5 @@ class SWSCipher {
         }
         
         return urldecode( $result );
-	}
+    }
 }

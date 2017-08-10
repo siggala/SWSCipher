@@ -2,20 +2,20 @@
 PHP-class for data encryption/decryption.
 
 ### Quick Start
-Basic encryption.
+Basic encryption. Default salt value is set to 32 and base64 encoding is enabled.
 ```php
 require 'SWSCipher.php';
 
 $secured_data = SWSCipher::encrypt( 'This is secret message.', 'secretkey' ); 
 
-// This will output: Jw0KAUUdGEUKFgYRFxFUBgAKAAQEF0s=
+// This will output: HBcnCBYNCgYLHBcBEU4dBxgLBg4HFgdOCAocCwYOFgYRDggGCxcHEV8GABYKAA4WFxEEBBEXSw===
 ```
 
-Basic decryption.
+Basic decryption. Default salt value is set to 32 and base64 encoding is enabled.
 ```php
 require 'SWSCipher.php';
 
-$data = SWSCipher::decrypt( 'Jw0KAUUdGEUKFgYRFxFUBgAKAAQEF0s=', 'secretkey' ); 
+$data = SWSCipher::decrypt( 'HBcnCBYNCgYLHBcBEU4dBxgLBg4HFgdOCAocCwYOFgYRDggGCxcHEV8GABYKAA4WFxEEBBEXSw===', 'secretkey' ); 
 
 // This will output: This is secret message.
 ```
@@ -26,13 +26,13 @@ If you want to use certain amount of extra chars just use integer value instead 
 ```php
 SWSCipher::encrypt( 'This is secret message.', 'secretkey', '50%', true );
 
-// This will output: JwANAQ0XCgFFHRhFChoYFgYXGREXAAERVAAGAAoAAAQEF0s=
+// This will output: JwANAQ0XCgFOHRhOChoYFgYXGREXAAERXwAGAAoAAAQEF0s==
 ```
 Basic encryption without base64 encoding.
 ```php
 SWSCipher::encrypt( 'This is secret message.', 'secretkey', 0, false );
 
-// This will output: J' EE T K
+// This will output: ' NN _ K
 ```
 
 ### Donation

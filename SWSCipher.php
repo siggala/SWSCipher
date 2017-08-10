@@ -18,14 +18,14 @@
  * 
  * @param string $data      Data string for encryption/decryption
  * @param string $key       Secret key for encryption/decryption
- * @param int|string $salt 	Number of extra chars or percentage amount (ex. '50%')
+ * @param int|string $salt 	Number of extra chars or percentage amount (ex. '50%'). Default value is set to 32.
  * @param boolean $base64 	Enable or disable base64-encoding. Encoding is enabled by default.
  * 
  * @return string
 */
 class SWSCipher {
     
-    public static function encrypt( $data, $key, $salt = 0, $base64 = true ) {
+    public static function encrypt( $data, $key, $salt = 32, $base64 = true ) {
     	$data       = urlencode( $data );
     	$dataLength = mb_strlen( $data );
     	$keyLength  = mb_strlen( $key );
@@ -57,7 +57,7 @@ class SWSCipher {
         return $base64 ? base64_encode( implode( '', $resultArray ) ) : implode( '', $resultArray );  
     }  
     
-    public static function decrypt( $data, $key, $salt = 0, $base64 = true ) { 
+    public static function decrypt( $data, $key, $salt = 32, $base64 = true ) { 
     	$data        = $base64 ? base64_decode( $data ) : $data;
     	$dataLength  = mb_strlen( $data );
     	$keyLength   = mb_strlen( $key );
